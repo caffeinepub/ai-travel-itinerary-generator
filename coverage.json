@@ -1,0 +1,52 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-25T13:46:30.189Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 2,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Add the Google AdSense auto-ads script tag to the HTML entry point (frontend/index.html) in the <head> section, using a placeholder AdSense publisher ID (ca-pub-XXXXXXXXXX) that the user can easily replace with their actual publisher ID once their site is approved by Google AdSense.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/index.html"
+        ],
+        "matchedFiles": [
+          "frontend/index.html"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Add a dedicated AdSense display ad unit component (AdBanner.tsx) that renders a responsive Google AdSense ad slot using the <ins class='adsbygoogle'> element, with a placeholder ad slot ID that the user can replace. Place this component in visible, non-intrusive positions on the HomePage: once below the hero section and once above the footer.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/AdBanner.tsx",
+          "frontend/src/pages/HomePage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/AdBanner.tsx",
+          "frontend/src/pages/HomePage.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/index.html",
+    "frontend/src/components/AdBanner.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}
