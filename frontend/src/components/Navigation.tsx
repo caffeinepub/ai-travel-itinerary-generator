@@ -14,9 +14,15 @@ export default function Navigation() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 font-bold text-xl text-foreground hover:text-sunset-coral transition-colors">
-          <Plane className="w-6 h-6 text-sunset-coral" />
-          <span className="hidden sm:inline">AI Travel Planner</span>
+        <Link to="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
+          <img
+            src="/assets/generated/trip-pilot-ai-logo.dim_256x256.png"
+            alt="Trip Pilot AI Logo"
+            className="w-8 h-8 rounded-lg object-cover"
+          />
+          <span className="font-black text-xl md:text-2xl bg-gradient-to-r from-tropical-fuchsia via-sunset-coral to-sunset-orange bg-clip-text text-transparent tracking-tight">
+            Trip Pilot AI
+          </span>
         </Link>
 
         <div className="flex items-center gap-6">

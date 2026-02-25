@@ -1,38 +1,25 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "Colorful landing page with free messaging, now integrating Google AdSense for monetization.",
-  "architectural_notes": [],
+  "summary": "Trip Pilot AI travel website with Google AdSense integration. User is adding a custom snippet to the site.",
+  "architectural_notes": [
+    "Google AdSense script is embedded in the site"
+  ],
   "known_issues": [],
   "isFixRequest": false,
-  "existing_features": [
-    {
-      "id": "feature-add-the-google-adsense-auto-ads-script-tag-to-the-html-entry-point-frontend-index-html-in-the-head-section-using-a-placeholder-adsense-publisher-id-ca-pub-xxxxxxxxxx-that-the-user-can-easily-replace-with-their-actual-publisher-id-once-their-site-is-approved-by-google-adsense",
-      "title": "Add the Google AdSense auto-ads script tag to the HTML entry point (frontend/index.html) in the <head> section, using a placeholder AdSense publisher ID (ca-pub-XXXXXXXXXX) that the user can easily replace with their actual publisher ID once their site is approved by Google AdSense.",
-      "reqIds": [
-        "REQ-1"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-a-dedicated-adsense-display-ad-unit-component-adbanner-tsx-that-renders-a-responsive-google-adsense-ad-slot-using-the-ins-class-adsbygoogle-element-with-a-placeholder-ad-slot-id-that-the-user-can-replace-place-this-component-in-visible-non-intrusive-positions-on-the-homepage-once-below-the-hero-section-and-once-above-the-footer",
-      "title": "Add a dedicated AdSense display ad unit component (AdBanner.tsx) that renders a responsive Google AdSense ad slot using the <ins class='adsbygoogle'> element, with a placeholder ad slot ID that the user can replace. Place this component in visible, non-intrusive positions on the HomePage: once below the hero section and once above the footer.",
-      "reqIds": [
-        "REQ-2"
-      ],
-      "version": 1
-    }
-  ],
+  "existing_features": [],
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Integrate Google AdSense on the website",
-      "reqIds": [],
+      "summary": "Add the user-provided custom code snippet to the Trip Pilot AI website. Since the snippet content was not included in the message, prompt the user to paste or share the snippet so it can be correctly embedded in the appropriate location (e.g., index.html head/body, a specific page component, or AdBanner component).",
+      "reqIds": [
+        "REQ-1"
+      ],
       "status": "pending"
     }
   ],
   "gameProjectType": "none",
-  "projectName": "AI Travel Planner",
+  "projectName": "Trip Pilot AI",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

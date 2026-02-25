@@ -13,7 +13,7 @@ export default function HomePage() {
     <div className="w-full overflow-x-hidden">
 
       {/* ── HERO ── */}
-      <section className="relative overflow-hidden min-h-[680px] flex items-center">
+      <section className="relative overflow-hidden min-h-[720px] flex items-center">
         {/* Colorful layered background */}
         <div className="absolute inset-0 hero-gradient" />
         <div
@@ -28,19 +28,32 @@ export default function HomePage() {
         <div className="relative container mx-auto px-4 py-24 md:py-32">
           <div className="max-w-5xl mx-auto text-center space-y-6">
 
-            {/* FREE badge — above the headline */}
+            {/* Logo + Brand Name — the hero centerpiece */}
+            <div className="flex flex-col items-center gap-4 mb-2">
+              <img
+                src="/assets/generated/trip-pilot-ai-logo.dim_256x256.png"
+                alt="Trip Pilot AI"
+                className="w-20 h-20 md:w-24 md:h-24 rounded-2xl shadow-2xl shadow-black/30 border-4 border-white/30"
+              />
+              <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-black tracking-tight leading-none">
+                <span
+                  className="bg-gradient-to-r from-white via-yellow-200 to-yellow-300 bg-clip-text text-transparent drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)]"
+                  style={{ WebkitTextStroke: '1px rgba(255,255,255,0.15)' }}
+                >
+                  Trip Pilot AI
+                </span>
+              </h1>
+              <p className="text-2xl md:text-3xl font-black text-white/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] tracking-wide uppercase letter-spacing-widest">
+                ✈️ Your AI-Powered Travel Co-Pilot
+              </p>
+            </div>
+
+            {/* FREE badge */}
             <div className="inline-flex items-center gap-2 bg-free-badge text-free-badge-text font-black text-lg md:text-xl px-6 py-2 rounded-full shadow-lg shadow-yellow-400/40 animate-bounce-slow border-2 border-yellow-300">
               <Gift className="w-5 h-5" />
               100% FREE — No Credit Card Required!
               <Star className="w-5 h-5 fill-current" />
             </div>
-
-            {/* Main headline */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black tracking-tight leading-tight">
-              <span className="text-gradient-hero">Pack Your Bags.</span>
-              <br />
-              <span className="text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)]">We'll Plan the Rest!</span>
-            </h1>
 
             <p className="text-xl md:text-2xl text-white/90 font-medium drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)] max-w-3xl mx-auto">
               AI-powered travel itineraries in seconds — personalized to your style, budget, and dream destinations.
@@ -74,7 +87,6 @@ export default function HomePage() {
       </section>
 
       {/* ── AD BANNER — below hero ── */}
-      {/* Replace data-ad-client and data-ad-slot inside AdBanner with your real AdSense IDs */}
       <div className="container mx-auto px-4 py-8">
         <AdBanner />
       </div>
@@ -108,7 +120,7 @@ export default function HomePage() {
       <section className="container mx-auto px-4 py-20">
         <div className="text-center mb-14">
           <h2 className="text-4xl md:text-5xl font-display font-black mb-4 text-foreground">
-            Why Travelers <span className="text-gradient-coral">Love Us</span>
+            Why Travelers <span className="text-gradient-coral">Love Trip Pilot AI</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Everything you need for the perfect trip — and it won't cost you a dime
@@ -181,7 +193,7 @@ export default function HomePage() {
               </div>
               <h3 className="font-black text-xl text-white">AI Builds Your Plan</h3>
               <p className="text-white/75 leading-relaxed">
-                Our AI instantly creates a personalized itinerary with activities, restaurants, and tips.
+                Trip Pilot AI instantly creates a personalized itinerary with activities, restaurants, and tips.
               </p>
             </div>
 
@@ -224,7 +236,6 @@ export default function HomePage() {
       </section>
 
       {/* ── AD BANNER — above final CTA ── */}
-      {/* Replace data-ad-client and data-ad-slot inside AdBanner with your real AdSense IDs */}
       <div className="container mx-auto px-4 py-8">
         <AdBanner />
       </div>
@@ -237,8 +248,9 @@ export default function HomePage() {
             🎁 IT'S FREE!
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-display font-black text-white">
-            Your Next Adventure Awaits
+          <h2 className="text-4xl md:text-6xl font-display font-black text-white">
+            Your Next Adventure Awaits<br />
+            <span className="text-yellow-300">with Trip Pilot AI</span>
           </h2>
           <p className="text-white/90 text-xl max-w-2xl mx-auto">
             Join thousands of happy travelers who plan smarter, not harder — with zero cost, zero hassle.

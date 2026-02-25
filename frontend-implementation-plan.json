@@ -1,45 +1,26 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Integrate Google AdSense on the website",
+  "title": "Add custom snippet to Trip Pilot AI website",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Add Google AdSense auto-ads script tag to the HTML entry point with placeholder publisher ID",
+      "summary": "Add user-provided custom code snippet to the Trip Pilot AI website in the appropriate location",
       "acceptanceCriteria": [
-        "The AdSense auto-ads <script> tag is present in the <head> of frontend/index.html with the async attribute and the correct AdSense script URL format (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX).",
-        "A clearly visible comment in the HTML marks where the user must replace 'ca-pub-XXXXXXXXXX' with their actual AdSense publisher ID.",
-        "The existing page title, font imports, and other head elements remain intact."
+        "The snippet is embedded in the correct location in the frontend codebase",
+        "The site builds and renders without errors after the snippet is added",
+        "The snippet is visible/active as intended (e.g., script executes, ad unit renders, widget appears)"
       ],
       "file_operations": [
         {
-          "path": "frontend/index.html",
-          "operation": "modify",
-          "description": "Add the Google AdSense auto-ads script tag to the <head> section with async attribute and placeholder publisher ID (ca-pub-XXXXXXXXXX). Include a clear HTML comment instructing the user to replace the placeholder with their actual AdSense publisher ID once their site is approved. Ensure the script URL follows the format https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX. Preserve all existing <head> elements including the page title 'AI Travel Itinerary Generator' and the Playfair Display font import."
-        }
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "summary": "Create AdBanner component and place it in visible positions on the HomePage below hero and above footer",
-      "acceptanceCriteria": [
-        "A reusable AdBanner component exists at frontend/src/components/AdBanner.tsx that renders an AdSense <ins> element with data-ad-client and data-ad-slot attributes.",
-        "The component calls (adsbygoogle = window.adsbygoogle || []).push({}) on mount via useEffect.",
-        "AdBanner is rendered on the HomePage below the hero section and above the footer section.",
-        "Placeholder ad slot IDs are clearly commented so the user knows to replace them with real slot IDs from their AdSense dashboard.",
-        "The component is styled to be responsive (data-ad-format='auto' and data-full-width-responsive='true').",
-        "Existing homepage sections and layout are not disrupted."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/AdBanner.tsx",
+          "path": "frontend/src/components/CustomSnippet.tsx",
           "operation": "create",
-          "description": "Create a reusable AdBanner component that renders a responsive Google AdSense display ad using the <ins class='adsbygoogle'> element. Include data-ad-client attribute with placeholder publisher ID (ca-pub-XXXXXXXXXX) and data-ad-slot attribute with placeholder slot ID (1234567890). Set data-ad-format='auto' and data-full-width-responsive='true' for responsive display. Implement a useEffect hook that calls (adsbygoogle = window.adsbygoogle || []).push({}) on component mount to initialize the ad. Add clear JSDoc comments instructing users to replace placeholder IDs with real values from their AdSense dashboard. Style the container with appropriate spacing and ensure the ad is visually distinct but non-intrusive."
+          "description": "Create a new React component to safely render the user-provided custom snippet. Include a placeholder comment instructing where to paste the actual snippet code. The component should handle both inline scripts and external script loading, and should be designed to work with various snippet types (analytics, widgets, ad units, etc.). Use React's dangerouslySetInnerHTML only if the snippet contains HTML markup, or useEffect for script injection if it's a JavaScript snippet."
         },
         {
-          "path": "frontend/src/pages/HomePage.tsx",
+          "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Import and render the AdBanner component twice on the HomePage: once immediately after the hero section (below the main CTA buttons and trust indicators) and once before the footer (after the TravelGuidesGrid and EmailCaptureModal). Wrap each AdBanner in a container div with appropriate Tailwind spacing classes (e.g., py-8 or py-12) to maintain visual separation from surrounding content. Ensure the existing marketing landing page layout including hero section, trust indicators, feature highlights, TravelGuidesGrid, and EmailCaptureModal remains intact and unaffected by the ad placements."
+          "description": "Import and render the CustomSnippet component in an appropriate location within the app shell (likely near the root level or within the router outlet) to ensure the snippet is loaded on all pages. Position it after ThemeProvider but before or after the router outlet depending on whether the snippet should appear on every page or only certain routes."
         }
       ]
     }

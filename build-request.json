@@ -1,59 +1,35 @@
 {
   "kind": "build_request",
-  "title": "Integrate Google AdSense on the website",
-  "projectName": "AI Travel Planner",
+  "title": "Add custom snippet to Trip Pilot AI website",
+  "projectName": "Trip Pilot AI",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Add the Google AdSense auto-ads script tag to the HTML entry point (frontend/index.html) in the <head> section, using a placeholder AdSense publisher ID (ca-pub-XXXXXXXXXX) that the user can easily replace with their actual publisher ID once their site is approved by Google AdSense.",
+      "text": "Add the user-provided custom code snippet to the Trip Pilot AI website. Since the snippet content was not included in the message, prompt the user to paste or share the snippet so it can be correctly embedded in the appropriate location (e.g., index.html head/body, a specific page component, or AdBanner component).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-recent"
         ],
         "quotes": [
-          "can you please integrate Google AdSense for me so I can sign up so I can sign this website up with Google AdSense"
+          "please add the following snippet to the new revised website here it is."
         ]
       },
       "acceptanceCriteria": [
-        "The AdSense auto-ads <script> tag is present in the <head> of frontend/index.html with the async attribute and the correct AdSense script URL format (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX).",
-        "A clearly visible comment in the HTML marks where the user must replace 'ca-pub-XXXXXXXXXX' with their actual AdSense publisher ID.",
-        "The existing page title, font imports, and other head elements remain intact."
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "text": "Add a dedicated AdSense display ad unit component (AdBanner.tsx) that renders a responsive Google AdSense ad slot using the <ins class='adsbygoogle'> element, with a placeholder ad slot ID that the user can replace. Place this component in visible, non-intrusive positions on the HomePage: once below the hero section and once above the footer.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-4"
-        ],
-        "quotes": [
-          "can you please integrate Google AdSense for me so I can sign up so I can sign this website up with Google AdSense"
-        ]
-      },
-      "acceptanceCriteria": [
-        "A reusable AdBanner component exists at frontend/src/components/AdBanner.tsx that renders an AdSense <ins> element with data-ad-client and data-ad-slot attributes.",
-        "The component calls (adsbygoogle = window.adsbygoogle || []).push({}) on mount via useEffect.",
-        "AdBanner is rendered on the HomePage below the hero section and above the footer section.",
-        "Placeholder ad slot IDs are clearly commented so the user knows to replace them with real slot IDs from their AdSense dashboard.",
-        "The component is styled to be responsive (data-ad-format='auto' and data-full-width-responsive='true').",
-        "Existing homepage sections and layout are not disrupted."
+        "The snippet is embedded in the correct location in the frontend codebase",
+        "The site builds and renders without errors after the snippet is added",
+        "The snippet is visible/active as intended (e.g., script executes, ad unit renders, widget appears)"
       ]
     }
   ],
   "constraints": [
-    "Use a placeholder publisher ID (ca-pub-XXXXXXXXXX) and placeholder ad slot IDs with clear comments so the user can substitute their real AdSense credentials after site approval.",
-    "Do not modify any files under frontend/src/hooks/ or frontend/src/components/ui/.",
-    "Do not modify backend/main.mo."
+    "Do not modify files listed in frontend.immutablePaths",
+    "Preserve all existing AdSense configuration in frontend/index.html"
   ],
   "nonGoals": [
-    "Obtaining or verifying the user's actual Google AdSense publisher ID or ad slot IDs.",
-    "Implementing server-side ad logic or backend changes.",
-    "Adding any paid or premium ad-blocking bypass logic.",
-    "Modifying the AdSense approval process — this only adds the required code snippets to the site."
+    "Changing any backend logic or data models",
+    "Redesigning existing UI components"
   ],
   "imageRequirements": {
     "required": [],

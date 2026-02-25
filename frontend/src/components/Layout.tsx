@@ -4,7 +4,7 @@ import { Heart } from 'lucide-react';
 
 export default function Layout() {
   const appIdentifier = encodeURIComponent(
-    typeof window !== 'undefined' ? window.location.hostname : 'travel-planner'
+    typeof window !== 'undefined' ? window.location.hostname : 'trip-pilot-ai'
   );
 
   return (
@@ -16,7 +16,13 @@ export default function Layout() {
       <footer className="border-t border-border/40 bg-card/50 backdrop-blur-sm mt-16">
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-            <p>© {new Date().getFullYear()} AI Travel Planner. All rights reserved.</p>
+            <p className="font-semibold text-foreground/70">
+              © {new Date().getFullYear()}{' '}
+              <span className="bg-gradient-to-r from-tropical-fuchsia to-sunset-coral bg-clip-text text-transparent font-black">
+                Trip Pilot AI
+              </span>
+              . All rights reserved.
+            </p>
             <p className="flex items-center gap-1.5">
               Built with <Heart className="w-4 h-4 fill-sunset-coral text-sunset-coral" /> using{' '}
               <a

@@ -1,10 +1,10 @@
 {
   "frontend/src/App.tsx": "Main application component with TanStack Router setup, defining all routes (home, planner, itinerary, shared, guides, admin) and wrapping with ThemeProvider, ProfileSetupModal, and Toaster.",
-  "frontend/src/components/Layout.tsx": "Root layout component with Navigation header, main content outlet, and footer including caffeine.ai attribution with UTM tracking.",
-  "frontend/src/components/Navigation.tsx": "Navigation bar component with logo, links to Planner and Guides pages, and LoginButton integration.",
+  "frontend/src/components/Layout.tsx": "Root layout with Navigation, main content outlet, and footer displaying \"Trip Pilot AI\" in a fuchsia-to-coral gradient alongside the caffeine.ai attribution.",
+  "frontend/src/components/Navigation.tsx": "Navigation bar with the Trip Pilot AI logo image and bold gradient-styled brand name linking to home, plus Plan Trip and Guides nav links and LoginButton.",
   "frontend/src/components/LoginButton.tsx": "Authentication button component using Internet Identity, displaying user profile name when authenticated and handling login/logout with query cache clearing.",
   "frontend/src/components/ProfileSetupModal.tsx": "Modal dialog for first-time user profile setup, collecting name and optional email, preventing flash on load with proper loading state checks.",
-  "frontend/src/pages/HomePage.tsx": "Vibrant colorful landing page unchanged in layout and content, now with two `AdBanner` placements — one below the hero section and one above the final CTA section — each wrapped in a container div with vertical padding for visual separation.",
+  "frontend/src/pages/HomePage.tsx": "Landing page with a redesigned hero section featuring the Trip Pilot AI logo, a massive 9xl gradient brand headline, tagline, free badge, CTA buttons, features, how-it-works, travel guides grid, and final CTA — all rebranded to \"Trip Pilot AI\".",
   "frontend/src/pages/PlannerPage.tsx": "Trip planning page with authentication guard, displaying ItineraryRequestForm for authenticated users or login prompt for guests.",
   "frontend/src/components/ItineraryRequestForm.tsx": "Form component for creating travel itinerary requests with destination, dates, interests checkboxes, and budget tier selection, submitting to backend and navigating to itinerary view.",
   "frontend/src/pages/ItineraryPage.tsx": "Itinerary detail page loading and displaying a single itinerary by ID with ownership checks for edit/export features.",
@@ -29,6 +29,6 @@
   "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including user profiles, itineraries, reviews, travel guides, and email capture with proper cache invalidation.",
   "frontend/src/index.css": "Global styles with an updated OKLCH tropical color palette (fuchsia primary, teal, coral, yellow), hero/feature/CTA gradient utilities, blob background colors, text-gradient helpers, FREE badge colors, and a slow-bounce keyframe animation.",
   "frontend/tailwind.config.js": "Tailwind config extended with the full tropical color token set (sunset-coral, sunset-orange, sunset-yellow, tropical-teal, tropical-cyan, tropical-fuchsia, tropical-lime) alongside the legacy navy color, keeping all existing font and radius settings.",
-  "frontend/index.html": "HTML entry point with Playfair Display font, and a Google AdSense auto-ads script tag in the `<head>` with a placeholder publisher ID (`ca-pub-XXXXXXXXXX`) and clear comments instructing the user to replace it with their real AdSense Publisher ID after approval.",
-  "frontend/src/components/AdBanner.tsx": "Reusable responsive Google AdSense display ad component that renders an `<ins class=\"adsbygoogle\">` element with placeholder publisher ID and slot ID, initializes the ad via `useEffect`, and includes detailed JSDoc comments guiding the user to replace the placeholder IDs with real values from their AdSense dashboard."
+  "frontend/index.html": "HTML entry point with updated title \"Trip Pilot AI — AI Travel Itinerary Generator\", Open Graph and Twitter meta tags for the new brand name, Playfair Display font, and Google AdSense Auto Ads script.",
+  "frontend/src/components/AdBanner.tsx": "Reusable responsive Google AdSense display ad component that renders an `<ins class=\"adsbygoogle\">` element with placeholder publisher ID and slot ID, initializes the ad via `useEffect`, without developer instruction comments."
 }
